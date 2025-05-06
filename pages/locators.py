@@ -5,8 +5,11 @@ class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
 
-class MainPageLocators():
-    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    BASKET_LINK = (By.CSS_SELECTOR, "a[href*='basket']")
+
+class BasketPageLocators():
+    BASKET_ITEMS = (By.CSS_SELECTOR, "div.basket-items")
+    BASKET_EMPTY_TEXT = (By.CSS_SELECTOR, "div#content_inner > p")
 
 class LoginPageLocators():
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")

@@ -1,5 +1,6 @@
 from .pages.product_page import ProductPage
 from .pages.login_page import LoginPage
+from .pages.basket_page import BasketPage
 
 import pytest
 
@@ -21,6 +22,14 @@ def test_guest_can_add_product_to_basket(browser, link):
     page = ProductPage(browser, link)
     page.open()
     page.add_product_to_basket()
+
+def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
+    page = ProductPage(browser, product_page)
+    page.open()
+    page.go_to_basket_page()
+    
+    basket_page = BasketPage(browser, browser.current_url)
+    basket_page.is_basket_empty()
 
 ## tests for success message checking
 @pytest.mark.xfail
